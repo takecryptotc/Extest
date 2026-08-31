@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Coinlook Global</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar desktop-only">
+      <button class="brand" data-route="home" aria-label="Coinlook Home">
+        <span class="brand-word">COINL<span class="brand-loop">∞</span>K</span>
+        <span class="brand-global">GLOBAL</span>
+      </button>
+      <nav class="topnav">
+        <button data-route="markets">Markets</button>
+        <button data-route="trade">Trade</button>
+        <button data-route="futures">Futures</button>
+        <button data-route="earn">Earn</button>
+        <button data-route="more">More</button>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+        <button class="icon-btn" id="notifyBtn" aria-label="Notifications">♢<span class="dot"></span></button>
+        <button class="btn ghost" id="loginBtn">Log In</button>
+        <button class="btn primary" id="signupBtn">Sign Up</button>
+        <button class="avatar" data-route="profile" aria-label="Profile">●</button>
+      </div>
+    </header>
+
+    <main id="page"></main>
+
+    <nav class="mobile-nav mobile-only" aria-label="Primary">
+      <button data-route="home" class="nav-item active"><span class="nav-ico">⌂</span><span>Home</span></button>
+      <button data-route="markets" class="nav-item"><span class="nav-ico">▥</span><span>Markets</span></button>
+      <button data-route="trade" class="nav-item trade-nav"><span class="trade-circle">⇄</span><span>Trade</span></button>
+      <button data-route="futures" class="nav-item"><span class="nav-ico">S</span><span>Futures</span></button>
+      <button data-route="assets" class="nav-item"><span class="nav-ico">▰</span><span>Assets</span></button>
+    </nav>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
