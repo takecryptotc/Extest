@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#020507" />
+  <title>Coinlook Global</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand js-nav" data-page="home" aria-label="Coinlook Home">
+        <img src="assets/coinlook-logo.png" alt="Coinlook Global" />
+      </button>
+      <nav class="desktop-nav" aria-label="Primary">
+        <button class="nav-link js-nav" data-page="markets">Markets</button>
+        <button class="nav-link js-nav" data-page="trade">Trade ▾</button>
+        <button class="nav-link js-nav" data-page="futures">Futures ▾</button>
+        <button class="nav-link js-nav" data-page="earn">Earn ▾</button>
+        <button class="nav-link js-nav" data-page="more">More ▾</button>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-btn" data-action="search" aria-label="Search">⌕</button>
+        <button class="icon-btn" data-action="notifications" aria-label="Notifications">♢<span class="dot"></span></button>
+        <button class="btn btn-ghost" data-action="login">Log In</button>
+        <button class="btn btn-primary" data-action="signup">Sign Up</button>
+        <button class="avatar js-nav" data-page="profile" aria-label="Profile">●</button>
+      </div>
+    </header>
+
+    <main id="page-root"></main>
+
+    <nav class="mobile-bottom" aria-label="Mobile navigation">
+      <button class="bottom-item js-nav active" data-page="home"><span>⌂</span><em>Home</em></button>
+      <button class="bottom-item js-nav" data-page="markets"><span>▥</span><em>Markets</em></button>
+      <button class="bottom-item trade-fab js-nav" data-page="trade"><span>⇄</span><em>Trade</em></button>
+      <button class="bottom-item js-nav" data-page="futures"><span>Ƨ</span><em>Futures</em></button>
+      <button class="bottom-item js-nav" data-page="assets"><span>▰</span><em>Assets</em></button>
+    </nav>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head"><h3 id="modalTitle">Action</h3><button class="icon-btn" id="modalClose">✕</button></div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <template id="home-template">
+    <section class="page home-page">
+      <section class="hero-grid">
+        <div class="hero-copy glass-card">
+          <div class="eyebrow">SEE <span>CRYPTO.</span> TRADE <span>SMARTER.</span></div>
+          <h1>Trade <span>Crypto.</span><br>Anywhere. Anytime.</h1>
+          <p>Buy, sell & trade 350+ cryptocurrencies with low fees, deep liquidity and bank-level security.</p>
+          <div class="hero-cta"><button class="btn btn-primary js-nav" data-page="trade">Get Started</button><button class="btn btn-ghost js-nav" data-page="markets">View Markets</button></div>
+          <div class="hero-stats"><div><strong>350+</strong><small>Cryptocurrencies</small></div><div><strong>$2.48B</strong><small>24H Volume</small></div><div><strong>1.25M+</strong><small>Users</small></div><div><strong>0.10%</strong><small>Low Fees</small></div></div>
+        </div>
+        <div class="hero-visual glass-card">
+          <div class="hero-orbit orb1">₿</div><div class="hero-orbit orb2">◆</div><div class="hero-orbit orb3">₮</div>
+          <div class="phone-card"><img src="assets/coinlook-icon.png" alt="Coinlook icon"><strong>COINLOOK</strong><small>GLOBAL</small><div class="phone-actions"><span>▣</span><span>◇</span><span>↗</span></div></div>
+          <div class="glow-ring"></div>
+        </div>
+      </section>
+
+      <section class="quick-actions glass-card" data-reveal>
+        <button data-action="deposit"><span>⇩</span><b>Deposit</b></button><button class="js-nav" data-page="markets"><span>▥</span><b>Markets</b></button><button class="js-nav" data-page="trade"><span>⇄</span><b>Trade</b></button><button class="js-nav" data-page="futures"><span>Ƨ</span><b>Futures</b></button><button class="js-nav" data-page="earn"><span>▣</span><b>Earn</b></button><button class="js-nav" data-page="more"><span>▦</span><b>More</b></button>
+      </section>
+
+      <section class="referral-banner" data-reveal><div><h3>Invite Friends, Earn Together</h3><p>Get up to <strong>30%</strong> commission</p></div><div class="gift">🎁 <span>∞</span></div><button class="btn referral-btn" data-action="referral">Invite Now →</button></section>
+
+      <section class="market-panel glass-card" data-reveal>
+        <div class="tabs market-tabs"><button class="active" data-market-tab="favorites">Favorites</button><button data-market-tab="hot">Hot</button><button data-market-tab="gainers">Gainers</button><button data-market-tab="losers">Losers</button><button data-market-tab="new">New</button></div>
+        <div class="market-head"><span>Pair</span><span>Last Price</span><span>Chart</span><span>24H Change</span></div>
+        <div class="market-list" data-market-list="home"></div>
+        <button class="wide-btn js-nav" data-page="markets">View More →</button>
+      </section>
+
+      <section class="security-strip glass-card" data-reveal><div><span class="shield">⬡</span><div><b>Secure Your Assets</b><small>Enable 2FA for extra security</small></div></div><button class="btn btn-ghost" data-action="security">Enable Now →</button></section>
+
+      <section class="feature-strip glass-card desktop-only" data-reveal><div><span>⬡</span><b>SECURE</b><small>Bank-level security</small></div><div><span>▥</span><b>LIQUID</b><small>Deep liquidity</small></div><div><span>ϟ</span><b>FAST</b><small>High performance</small></div><div><span>◎</span><b>GLOBAL</b><small>Trade from anywhere</small></div></section>
+    </section>
+  </template>
+
+  <template id="markets-template">
+    <section class="page markets-page">
+      <div class="page-title"><div><h1>Markets</h1><p>Trade popular cryptocurrencies</p></div><div class="search-box"><span>⌕</span><input id="marketSearch" placeholder="Search coin..." /></div></div>
+      <section class="market-panel glass-card full-market">
+        <div class="tabs primary-tabs"><button class="active" data-primary="favourite">Favourite</button><button data-primary="spot">Spot</button><button data-primary="futures">Futures</button></div>
+        <div class="filter-row"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="USDT">USDT</button><button class="chip" data-filter="USDC">USDC</button><button class="chip" data-filter="BTC">BTC</button><button class="chip" data-filter="ETH">ETH</button><button class="filter-icon">▽</button></div>
+        <div class="market-head full"><span>Pair / Vol ↕</span><span>Last Price ↕</span><span>Chart</span><span>24h Change ↕</span></div>
+        <div class="market-list" data-market-list="markets"></div>
+      </section>
+    </section>
+  </template>
+
+  <template id="trade-template">
+    <section class="page trade-page">
+      <div class="trade-topline"><div><span class="coin btc">₿</span><div><h2>BTC / USDT <small>10x</small></h2><strong>67,892.11</strong><em>+2.45%</em></div></div><div class="trade-stats"><span>24H High <b>68,952.31</b></span><span>24H Low <b>66,210.45</b></span><span>24H Volume <b>25,841.32</b></span></div></div>
+      <div class="trade-layout">
+        <section class="chart-card glass-card"><div class="chart-tools"><button>1m</button><button>5m</button><button class="active">15m</button><button>1H</button><button>4H</button><button>1D</button><button>Indicators</button></div><div class="candle-chart" id="candleChart"></div></section>
+        <section class="orderbook glass-card"><div class="subtabs"><button class="active">Order Book</button><button>Recent Trades</button></div><div class="book-head"><span>Price (USDT)</span><span>Amount (BTC)</span><span>Total (USDT)</span></div><div id="orderBookRows"></div></section>
+        <section class="order-panel glass-card"><div class="buy-sell"><button class="active" data-side="buy">Buy</button><button data-side="sell">Sell</button></div><div class="order-type"><button class="active">Limit</button><button>Market</button><button>Stop Limit</button></div><label>Price (USDT)<div class="input-wrap"><input id="orderPrice" type="number" value="67892.11"><span>USDT</span></div></label><label>Amount (BTC)<div class="input-wrap"><input id="orderAmount" type="number" placeholder="Enter amount" step="0.0001"><span>BTC</span></div></label><input class="range" id="orderRange" type="range" min="0" max="100" value="0"><div class="range-labels"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div><label>Total (USDT)<div class="input-wrap"><input id="orderTotal" readonly value="0.00"><span>USDT</span></div></label><button class="btn btn-primary order-submit" id="orderSubmit">Buy BTC</button><small class="available">Available: 0.00 USDT</small></section>
+      </div>
+    </section>
+  </template>
+
+  <template id="assets-template">
+    <section class="page assets-page">
+      <div class="asset-hero glass-card"><div><small>Est. total value ◉</small><h1>39.2 <span>USD⌄</span></h1><p>Today's PnL <strong>+$0.06 (+0.16%)</strong></p><div class="asset-actions"><button class="btn btn-primary" data-action="deposit">Deposit</button><button class="btn btn-ghost" data-action="withdraw">Withdraw</button><button class="btn btn-ghost" data-action="transfer">Transfer</button></div></div><img src="assets/coinlook-icon.png" alt="Coinlook"></div>
+      <section class="glass-card asset-list-card"><div class="section-head"><h2>My Assets</h2><label class="small-toggle"><input type="checkbox"> Hide small assets</label></div><div id="assetRows"></div></section>
+    </section>
+  </template>
+
+  <template id="profile-template">
+    <section class="page profile-page">
+      <div class="profile-toolbar"><button class="icon-btn js-nav" data-page="home">‹</button><button class="icon-btn">◎</button></div>
+      <section class="profile-card glass-card"><div class="profile-avatar">◒</div><div><h2>mk****@gmail.com</h2><p>UID: LBA1C47754 <button class="copy-btn" data-copy="LBA1C47754">▣</button></p><span class="verified">⬡ Verified</span></div><img src="assets/coinlook-icon.png" alt=""></section>
+      <section class="settings-card glass-card"><button data-action="referral"><span>♧</span>Referral<em>›</em></button><button data-action="security"><span>⬡</span>Security<em>›</em></button><button data-action="preference"><span>⬢</span>Preference<em>›</em></button></section>
+      <section class="settings-card glass-card"><button data-action="support"><span>?</span>Support Center<em>›</em></button><button data-action="official"><span>▱</span>Official Channel<em>›</em></button><button data-action="api"><span>⌘</span>API Settings<em>›</em></button><button data-action="about"><span>ⓘ</span>About Coinlook<small>1.0.0</small><em>›</em></button></section>
+    </section>
+  </template>
+
+  <template id="generic-template"><section class="page generic-page"><div class="glass-card empty-state"><img src="assets/coinlook-icon.png"><h1 data-generic-title>Coming Soon</h1><p data-generic-copy>This module is prepared for API/backend integration.</p><button class="btn btn-primary js-nav" data-page="home">Back Home</button></div></section></template>
+
+  <script src="app.js"></script>
+</body>
+</html>
