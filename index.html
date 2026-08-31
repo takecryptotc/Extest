@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050708">
+  <title>Coinlook Global</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="brand js-nav" data-page="home" aria-label="Coinlook Global Home"><img src="assets/coinlook-logo.png" alt="Coinlook Global"></button>
+      <nav class="desktop-nav" aria-label="Primary">
+        <button class="js-nav" data-page="markets">Markets</button>
+        <button class="js-nav" data-page="trade">Trade <span>⌄</span></button>
+        <button class="js-nav" data-page="futures">Futures <span>⌄</span></button>
+        <button class="js-nav" data-page="earn">Earn <span>⌄</span></button>
+        <button class="js-nav" data-page="more">More <span>⌄</span></button>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" data-action="search" data-icon="search" aria-label="Search"></button>
+        <button class="icon-button has-dot" data-action="notifications" data-icon="bell" aria-label="Notifications"></button>
+        <button class="icon-button desktop-only" data-action="support" data-icon="headphones" aria-label="Support"></button>
+        <button class="auth-button secondary desktop-only" data-action="login">Log In</button>
+        <button class="auth-button primary desktop-only" data-action="signup">Sign Up</button>
+        <button class="icon-button desktop-only" data-action="language" data-icon="globe" aria-label="Language"></button>
+        <button class="avatar-button js-nav" data-page="profile" data-icon="user" aria-label="Profile"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <nav class="mobile-bottom" aria-label="Mobile navigation">
+    <button class="js-nav active" data-page="home" data-icon="home"><span>Home</span></button>
+    <button class="js-nav" data-page="markets" data-icon="bars"><span>Markets</span></button>
+    <button class="js-nav trade-center" data-page="trade" data-icon="swap"><span>Trade</span></button>
+    <button class="js-nav" data-page="futures" data-icon="futures"><span>Futures</span></button>
+    <button class="js-nav" data-page="assets" data-icon="wallet"><span>Assets</span></button>
+  </nav>
+
+  <div id="modal" class="modal-wrap" hidden aria-hidden="true">
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head"><h3 id="modalTitle">Coinlook</h3><button id="modalClose" class="icon-button" data-icon="x" aria-label="Close"></button></div>
+      <div id="modalBody"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
